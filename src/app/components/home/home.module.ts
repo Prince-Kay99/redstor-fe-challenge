@@ -3,7 +3,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -11,4 +11,8 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule],
   exports: [HomeComponent]
 })
-export class HomeModule {}
+export class HomeModule implements OnInit {
+
+  ngOnInit() {}
+  
+}
