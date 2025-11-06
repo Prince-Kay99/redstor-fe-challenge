@@ -6,7 +6,8 @@ import { HomeComponent, CollectionComponent, PhotoComponent } from './components
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'collection/:collectionId', component: CollectionComponent },
-  { path: 'collection/:collectionId/photo/:photoId', component: PhotoComponent }
+  { path: 'collection/:collectionId/photo/:photoId', component: PhotoComponent },
+  { path:'collection',loadChildren: () => import('./components/collection/collection.module').then(m => m.CollectionModule) }
 ];
 
 @NgModule({

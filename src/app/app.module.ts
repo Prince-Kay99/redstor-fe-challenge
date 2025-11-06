@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { CollectionsEffects, metaReducers, reducers } from './store';
+import { CollectionsEffects } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { environment } from '@environments/environment';
+import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,11 +22,13 @@ import { environment } from '@environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToolbarComponent,
 
     // Store
     // toDo Is there a way to load the store just for the module or component in use?
-    StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([CollectionsEffects]),
+    // StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
