@@ -11,11 +11,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        HomeComponent,
-        TranslateModule.forRoot(),
-        NoopAnimationsModule // ✅ Fixes animation-related errors
-      ],
+      imports: [HomeComponent, TranslateModule.forRoot(), NoopAnimationsModule],
       providers: [provideMockStore()]
     }).compileComponents();
   });

@@ -54,8 +54,8 @@ export class HomeComponent implements OnInit {
   selectedLang = 'en';
 
   constructor(private translate: TranslateService) {
-    // Set default language
     translate.setDefaultLang('en');
+
     // Use browser language if available
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang?.match(/en|fr/) ? browserLang : 'en');
