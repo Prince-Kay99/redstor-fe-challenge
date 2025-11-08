@@ -20,7 +20,6 @@
     .mat-card-image {
       width: 100%;
         height: auto;
-        /* prefer modern aspect-ratio where supported */
         aspect-ratio: 16 / 10;
       object-fit: cover;
       margin-bottom: 0;

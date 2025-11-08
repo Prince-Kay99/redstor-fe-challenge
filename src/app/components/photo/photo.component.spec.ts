@@ -1,18 +1,3 @@
-// import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { provideMockStore } from '@ngrx/store/testing';
-// import { RouterTestingModule } from '@angular/router/testing';
-// import { ActivatedRoute } from '@angular/router';
-// import { TranslateModule } from '@ngx-translate/core';
-// import { MatProgressBarModule } from '@angular/material/progress-bar';
-// import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-// import { CommonModule } from '@angular/common';
-
-// describe('PhotoComponent', () => {
-//   it('should be tested later', () => {
-//     expect(true).toBeTrue();
-//   });
-// });
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CapitalizePipe, PhotoComponent } from './photo.component';
 import { provideMockStore } from '@ngrx/store/testing';
