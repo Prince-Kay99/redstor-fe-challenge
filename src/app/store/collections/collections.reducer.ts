@@ -6,10 +6,14 @@ export const collectionsFeatureKey = 'collections';
 
 export interface State {
   collections: ICollection[];
+  total: number;
+  isLoading: boolean;
 }
 
 export const initialState: State = {
-  collections: []
+  collections: [],
+  total: 0,
+  isLoading: false
 };
 
 export const reducer = createReducer(

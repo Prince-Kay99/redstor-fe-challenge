@@ -7,3 +7,9 @@ export interface ICollection {
   cover_photo: IPhoto;
   total_photos: number;
 }
+
+export interface ICollectionState {
+  collections: ICollection[];
+  total: number;
+  isLoading: boolean;
+}

@@ -5,11 +5,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PhotoComponent } from './photo.component';
+import { CapitalizePipe, PhotoComponent } from './photo.component';
 
 @NgModule({
   declarations: [PhotoComponent],
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule, MatIconModule, CapitalizePipe],
   exports: [PhotoComponent]
 })
 export class PhotoModule {}

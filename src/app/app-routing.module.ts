@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent, CollectionComponent, PhotoComponent } from './components';
 
 // toDo How could we improve this routing?
+//Done
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'collection/:collectionId', component: CollectionComponent },
-  { path: 'collection/:collectionId/photo/:photoId', component: PhotoComponent },
-  { path:'collection',loadChildren: () => import('./components/collection/collection.module').then(m => m.CollectionModule) }
+  { path: 'collection', loadChildren: () => import('./components/collection/collection.module').then(m => m.CollectionModule) },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

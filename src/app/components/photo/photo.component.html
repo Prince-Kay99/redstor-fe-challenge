@@ -1,7 +1,5 @@
 <!-- toDo Could you optimise this piece of code? -->
-<mat-toolbar>
-  <span>Redstor FE Challenger in photo</span>
-</mat-toolbar>
+
 
 <!-- toDo Could you optimise this piece of code? -->
 <div class="breadcrumbs">
@@ -14,14 +12,17 @@
 
 <div class="layout-container">
   <!-- toDo Could you optimise this piece of code? -->
-  <mat-progress-bar *ngIf="isLoading$ | async"></mat-progress-bar>
+@if (isLoading()) {
+  <mat-progress-bar></mat-progress-bar>
+}
 
-  <div class="gallery" fxLayout.sm="column">
+  <div class="gallery" fxLayout.sm="column"  fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="24px">
     <!-- toDO Could you improve the styling to be responsive? -->
-    <mat-card *ngIf="photo$ | async as photo" class="preview">
+
+    <mat-card *ngIf="photo() as photo" class="preview"  fxFlex="100" fxFlex.gt-sm="80" fxFlex.gt-md="60">
       <!-- toDO Why is throwing some console errors? -->
 
-      <mat-card-header>
+      <mat-card-header *ngIf="photo.user">
         <img mat-card-avatar [src]="photo.user.profile_image.medium" />
         <mat-card-title>{{ photo.user.first_name }} {{ photo.user.last_name }}</mat-card-title>
         <mat-card-subtitle *ngIf="photo.user.location">
@@ -34,7 +35,7 @@
         <div>
           <div>
             <!-- toDO Is there another way to do this operation? -->
-            <p>{{ photo.description?.charAt(0)?.toUpperCase() }}{{ photo.description?.slice(1) }}</p>
+            <p>{{ photo.description | capitalize }}</p>
           </div>
           <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="end">
             <p fxLayoutAlign="center">
@@ -47,7 +48,8 @@
         </div>
       </mat-card-content>
 
-      <img mat-card-image [src]="photo.urls.full" [alt]="photo.alt_description" />
+      <img mat-card-image [src]="photo.urls?.full" [alt]="photo.alt_description" />
     </mat-card>
+    
   </div>
 </div>

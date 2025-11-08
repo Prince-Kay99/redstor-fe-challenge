@@ -14,17 +14,19 @@
 
   <div class="gallery">
     <!-- toDo Is there another way to rewrite this with new Angular 17 features? -->
-    @for (collection of collections(); track collection.id) {
     <!-- toDO Could you improve the styling to be responsive? -->
+
+    @for (collection of collections$ | async; track collection.id) {
     <mat-card class="gallery-item thumbnails" [routerLink]="'/collection/' + collection.id">
-      <img mat-card-image [src]="collection.cover_photo.urls.small" [alt]="collection.cover_photo.description" />
+      <img mat-card-image [src]="collection.cover_photo.urls.small" [alt]="collection.cover_photo.description" class="img-dimensions" />
       <mat-card-content>
         <p class="title">{{ collection.title }}</p>
       </mat-card-content>
     </mat-card>
     }@empty {
     <p class="empty-state">No collections available.</p>
-    }
+    } 
+
   </div>
 
     <mat-paginator

@@ -10,13 +10,15 @@
 
 <div class="layout-container">
   <!-- toDo Could you optimise this piece of code? -->
-  <mat-progress-bar *ngIf="isLoading$ | async"></mat-progress-bar>
+  @if (isLoading()) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
 
   <div class="gallery">
     <!-- toDO Could you improve the styling to be responsive? -->
-    <ng-container *ngFor="let photo of photos$ | async">
+       @for (photo of photos(); track photo.id) {
       <mat-card class="gallery-item thumbnails" (click)="handleGotoPhoto(photo)">
-        <img mat-card-image [src]="photo.urls.small" [alt]="photo.alt_description" />
+        <img mat-card-image [src]="photo.urls.small" [alt]="photo.alt_description" class="img-dimensions" />
         <mat-card-content fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
           <p>
             <mat-icon inline>favorite</mat-icon>
@@ -24,6 +26,6 @@
           </p>
         </mat-card-content>
       </mat-card>
-    </ng-container>
+   }
   </div>
 </div>

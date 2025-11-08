@@ -18,10 +18,14 @@
     padding-bottom: 0;
 
     .mat-card-image {
-      height: 330px;
+      width: 100%;
+        height: auto;
+        /* prefer modern aspect-ratio where supported */
+        aspect-ratio: 16 / 10;
       object-fit: cover;
       margin-bottom: 0;
       border-radius: 8px;
+      display: block;
     }
 
     .mat-card-content {
@@ -30,10 +34,14 @@
 
       p.title {
         font-size: 1.2rem;
-        line-height: 2.4rem;
+        line-height: 1.6rem;
         font-weight: 400;
         text-align: center;
         text-transform: capitalize;
+        margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
       }
     }
   }

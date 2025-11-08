@@ -1,0 +1,15 @@
+<div class="breadcrumbs">
+  <a class="active"><span>Collections</span></a>
+</div>
+
+<nav class="breadcrumbs">
+  <ng-container *ngFor="let item of items; let last = last">
+    <ng-container *ngIf="!last; else lastBreadcrumb">
+      <a [routerLink]="item.link || '#'">{{ item.label }}</a>
+      <span class="separator">/</span>
+    </ng-container>
+    <ng-template #lastBreadcrumb>
+      <span class="active">{{ item.label }}</span>
+    </ng-template>
+  </ng-container>
+</nav>

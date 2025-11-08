@@ -7,6 +7,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollectionsEffects } from './store';
+import { reducer as collectionsReducer } from '@app/store/collections/collections.reducer';
+
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -26,9 +28,10 @@ import { ToolbarComponent } from './components/shared/toolbar/toolbar.component'
 
     // Store
     // toDo Is there a way to load the store just for the module or component in use?
-    // StoreModule.forRoot(reducers, { metaReducers }),
+    //Done
     StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    StoreModule.forFeature('collections', collectionsReducer),
+    EffectsModule.forRoot([CollectionsEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
