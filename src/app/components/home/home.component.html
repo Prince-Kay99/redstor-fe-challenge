@@ -3,7 +3,8 @@
 
 <!-- toDo Could you optimise this piece of code? -->
 <div class="breadcrumbs">
-  <a class="active"><span>Collections</span></a>
+  <a class="active"><span>{{'COLLECTIONS' | translate }}</span></a>
+  
 </div>
 
 <div class="layout-container">
@@ -24,8 +25,8 @@
       </mat-card-content>
     </mat-card>
     }@empty {
-    <p class="empty-state">No collections available.</p>
-    } 
+      <p class="empty-state">{{ 'NO_COLLECTIONS' | translate }}</p> 
+    }
 
   </div>
 

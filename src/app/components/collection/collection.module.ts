@@ -12,6 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CollectionsEffects } from '@app/store';
 import { PhotoComponent } from '../photo';
 import { reducer as collectionsReducer } from '@app/store/collections/collections.reducer';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   { path: ':collectionId', component: CollectionComponent, data: { title: 'Redstor FE Challenger' } },
@@ -27,6 +28,7 @@ const routes: Routes = [
     MatProgressBarModule,
     MatCardModule,
     MatIconModule,
+    TranslateModule,
     StoreModule.forFeature('collections', collectionsReducer),
     EffectsModule.forFeature([CollectionsEffects]),
 

@@ -1,10 +1,10 @@
 {
-  "HOME": {
-    "TITLE": "Redstor FE Challenger",
-    "COLLECTIONS": "Collections",
-    "NO_COLLECTIONS": "No collections available.",
+     "TITLE": "Redstor FE Challenger",
     "PAGE": "Page",
-    "PREVIOUS": "← Previous",
-    "NEXT": "Next →"
-  }
+    "PREVIOUS": "Previous",
+    "NEXT": "Next",
+     "FAVORITE": "Favorite",
+  "COLLECTIONS": "Collections",
+  "NO_COLLECTIONS": "No collections available.",
+  "VIEWS": "Views"
 }
