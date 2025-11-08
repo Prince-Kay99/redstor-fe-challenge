@@ -1,8 +1,9 @@
 import { PageEvent } from '@angular/material/paginator';
 import { HomeComponent } from './home.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore } from '@ngrx/store/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'; // ✅ Add this
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -10,9 +11,12 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent],
-      providers: [provideMockStore()],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      imports: [
+        HomeComponent,
+        TranslateModule.forRoot(),
+        NoopAnimationsModule // ✅ Fixes animation-related errors
+      ],
+      providers: [provideMockStore()]
     }).compileComponents();
   });
 
